@@ -46,17 +46,6 @@ export default class extends Phaser.State {
 	this.planet.angle %= 359// Cannot use 360 for whatever reason.
 	this.planet.sky.angle -= 0.005
 
-        console.log("Planet angle: " + parseInt(this.planet.angle))
-	this.setLum();
-    }
-
-    setLum() {
-	var light = 0
-	if(Math.abs(this.planet.angle) < 180)
-	    light = Math.abs(this.planet.angle) / 180
-	else
-	    light = 360 / Math.abs(this.planet.angle)
-
-	this.planet.sky.alpha = light;
+	this.planet.sky.alpha = Math.abs(Math.sin(this.planet.rotation*0.5))
     }
 }
