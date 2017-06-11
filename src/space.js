@@ -17,7 +17,12 @@ export default class Space extends Phaser.Group {
 				2);
 	}
 	graphics.endFill();
-
 	this.add(graphics)
+
+	var moon = this.create(250, 50, 'moon')
+	moon.anchor.setTo(0.5)
+
+	var sun = this.create(250, 950, 'sun')
+	sun.anchor.setTo(0.5)
     }
 }
