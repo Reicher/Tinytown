@@ -20,15 +20,24 @@ export default class Planet extends Phaser.Group {
 	var dusk = 180 //-180
 
 	this.putOnPlanet(night-20, 'tree1');
+	this.putOnPlanet(night-40, 'cross');
 	this.putOnPlanet(night+30, 'tree1');
 
 	this.putOnPlanet(dawn, 'tree1');
+	var fire = this.putOnPlanet(dawn-15, 'campfire');
+	fire.animations.add('burn', [0, 1], 5, true);
+	fire.animations.play('burn');
+
+	this.putOnPlanet(dawn-30, 'tree2');
+	this.putOnPlanet(dawn-45, 'tree2');
 
 	this.putOnPlanet(day, 'stuga');
 	this.putOnPlanet(day-30, 'tree1');
 
 	this.putOnPlanet(dusk, 'tree1');
 	this.putOnPlanet(dusk-30, 'tree1');
+
+	this.putOnPlanet(dusk+20, 'tree2');
     }
 
 
@@ -44,15 +53,17 @@ export default class Planet extends Phaser.Group {
 	thing.position.y += pos.y
 	thing.anchor.setTo(0.5, 1)
 	thing.angle = angle + 90
+
+	return thing
     }
 
     update() {
 	// 0 = night 1 = day
 	var time = Math.abs(Math.sin(this.rotation*0.5))
 	this.angle %= 359// Cannot use 360 for whatever reason.
-	this.sky.angle -= 0.01
+	this.sky.angle -= 0.05
 
-	this.sky.alpha = 0.90 * time
+	this.sky.alpha = 0.9 * time
 
 	var c = Phaser.Color.interpolateColor(0x000000, 0x7ec0ee, 100, 100*time, 1)
 	this.game.stage.backgroundColor = c

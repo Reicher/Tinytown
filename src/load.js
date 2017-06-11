@@ -18,8 +18,12 @@ export default class extends Phaser.State {
 	this.load.image('sun', './assets/images/sun.png')
 
 	this.load.image('tree1', './assets/images/tree1.png')
+	this.load.image('tree2', './assets/images/tree2.png')
+	this.load.image('cross', './assets/images/cross.png')
 	this.load.image('stuga', './assets/images/stuga.png')
+
 	this.load.spritesheet('hero', './assets/images/hero.png', 50, 100)
+	this.load.spritesheet('campfire', './assets/images/campfire.png', 40, 40)
     }
 
     create() {

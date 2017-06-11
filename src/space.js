@@ -10,7 +10,7 @@ export default class Space extends Phaser.Group {
 	this.pivot.y = 500
 
 	var graphics = game.add.graphics(0, 0)
-	graphics.beginFill(0xFFFFFF, 0.6)
+	graphics.beginFill(0xFFFFFF, 0.4)
 	for( var i = 0; i < 300; i++){
 	    graphics.drawCircle(game.rnd.integerInRange(-500, 1000),
 				game.rnd.integerInRange(0, 1000),
