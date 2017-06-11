@@ -17,6 +17,11 @@ export default class extends Phaser.State {
 	this.hero.animations.add('west', [12, 13, 14, 15, 16, 17, 18, 19], 15, true);
 	this.hero.animations.add('east', [28, 29, 30, 31, 32, 33, 34, 35], 15, true);
 
+	this.tint = this.add.graphics(0, 0)
+	this.tint.beginFill(0xffffff, 0.2);
+	this.tint.drawRect(0, 0, 500, 500);
+	this.tint.endFill();
+
 	this.cursors = game.input.keyboard.createCursorKeys();
     }
 
@@ -34,5 +39,12 @@ export default class extends Phaser.State {
 	}
 	else
 	    this.hero.frame = 2
+
+	var time = Math.abs(Math.sin(this.planet.rotation*0.5))
+
+	var c = Phaser.Color.interpolateColor(0x003366, 0xFDB813, 100, 100 * time, 1)
+	this.tint.tint = c
+
+
     }
 }
