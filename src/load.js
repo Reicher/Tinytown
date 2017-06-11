@@ -15,6 +15,7 @@ export default class extends Phaser.State {
 	this.load.image('planet', './assets/images/planet.png')
 	this.load.image('sky', './assets/images/sky.png')
 	this.load.image('tree1', './assets/images/tree1.png')
+	this.load.image('stuga', './assets/images/stuga.png')
 	this.load.spritesheet('hero', './assets/images/hero.png', 50, 100)
 
 	// Church corridor
