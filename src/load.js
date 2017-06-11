@@ -11,15 +11,11 @@ export default class extends Phaser.State {
 
 	this.load.image('tnsLogo', './assets/images/tns-logo.png')
 	this.load.image('menu', './assets/images/menu.png')
-	this.load.image('space', './assets/images/space.png')
 	this.load.image('planet', './assets/images/planet.png')
 	this.load.image('sky', './assets/images/sky.png')
 	this.load.image('tree1', './assets/images/tree1.png')
 	this.load.image('stuga', './assets/images/stuga.png')
 	this.load.spritesheet('hero', './assets/images/hero.png', 50, 100)
-
-	// Church corridor
-	// this.load.spritesheet('preacher_man', './assets/images/church/church_main48x117.png', 48, 117)
     }
 
     create() {
