@@ -43,7 +43,6 @@ export default class extends Phaser.State {
 	    this.hero.frame = 2
 
 	var time = Math.abs(Math.sin((this.planet.rotation) *0.5))
-	console.log(time);
 
 	var c = Phaser.Color.interpolateColor(0x003366, 0xFDB813, 100, 100 * time, 1)
 	this.tint.tint = c
