@@ -25,14 +25,10 @@ export default class Planet extends Phaser.Group {
 	this.putOnPlanet(night-40, 'cross');
 	this.putOnPlanet(night+30, 'tree1');
 
-	this.monster = new Monster(this.game, night);
+	this.monster = new Monster(this.game, dawn-10);
 	this.add(this.monster)
 
 	this.putOnPlanet(dawn+10, 'tree1');
-	var fire = this.putOnPlanet(dawn-15, 'campfire');
-	fire.animations.add('burn', [0, 1], 5, true);
-	fire.animations.play('burn');
-
 	this.putOnPlanet(dawn-30, 'tree2');
 	this.putOnPlanet(dawn-45, 'tree2');
 
@@ -41,6 +37,10 @@ export default class Planet extends Phaser.Group {
 
 	this.putOnPlanet(dusk, 'tree1');
 	this.putOnPlanet(dusk-30, 'tree1');
+	var fire = this.putOnPlanet(dusk-15, 'campfire');
+	fire.animations.add('burn', [0, 1], 5, true);
+	fire.animations.play('burn');
+
 
 	this.putOnPlanet(dusk+20, 'tree2');
     }
@@ -48,11 +48,11 @@ export default class Planet extends Phaser.Group {
     putOnPlanet(angle, key){
 	var thing = this.create(250, 500, key)
 	var compensate = thing.width / 15;
-	var pos = pointFromPolar(250-compensate, angle, true)
+	var pos = pointFromPolar(250-compensate, angle-90, true)
 	thing.position.x += pos.x
 	thing.position.y += pos.y
 	thing.anchor.setTo(0.5, 1)
-	thing.angle = angle + 90
+	thing.angle = angle//  90
 
 	return thing
     }
