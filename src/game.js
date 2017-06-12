@@ -3,7 +3,6 @@ import Phaser from 'phaser'
 
 import Space from './space.js'
 import Planet from './planet.js'
-import Monster from './monster.js'
 
 export default class extends Phaser.State {
     init () {}
@@ -13,11 +12,13 @@ export default class extends Phaser.State {
     create () {
 	this.space = new Space(this.game)
 	this.planet = new Planet(this.game)
-	this.monster = new Monster(this.game, 45);
+	this.planet.angle -= 90;
+	this.space.angle -= 90;
 
-	this.hero = this.add.sprite(225, 225, 'hero')
+	this.hero = this.add.sprite(225, 255, 'hero')
 	this.hero.animations.add('west', [12, 13, 14, 15, 16, 17, 18, 19], 15, true);
 	this.hero.animations.add('east', [28, 29, 30, 31, 32, 33, 34, 35], 15, true);
+	this.hero.anchor.setTo(0.5, 1)
 
 	this.tint = this.add.graphics(0, 0)
 	this.tint.beginFill(0xffffff, 0.2);

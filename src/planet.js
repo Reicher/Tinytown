@@ -1,4 +1,6 @@
 import Phaser from 'phaser'
+import Monster from './monster.js'
+import pointFromPolar from './util.js'
 
 export default class Planet extends Phaser.Group {
     constructor(game) {
@@ -22,8 +24,10 @@ export default class Planet extends Phaser.Group {
 	this.putOnPlanet(night-20, 'tree1');
 	this.putOnPlanet(night-40, 'cross');
 	this.putOnPlanet(night+30, 'tree1');
+	this.monster = new Monster(this.game, night);
+	this.add(this.monster)
 
-	this.putOnPlanet(dawn, 'tree1');
+	this.putOnPlanet(dawn+10, 'tree1');
 	var fire = this.putOnPlanet(dawn-15, 'campfire');
 	fire.animations.add('burn', [0, 1], 5, true);
 	fire.animations.play('burn');
@@ -40,15 +44,10 @@ export default class Planet extends Phaser.Group {
 	this.putOnPlanet(dusk+20, 'tree2');
     }
 
-
-    pointFromPolar(r, t, degrees) {
-	return new Phaser.Point(1,0).setMagnitude(r).rotate(0,0,t,degrees);
-    }
-
     putOnPlanet(angle, key){
 	var thing = this.create(250, 500, key)
 	var compensate = thing.width / 15;
-	var pos = this.pointFromPolar(250-compensate, angle, true)
+	var pos = pointFromPolar(250-compensate, angle, true)
 	thing.position.x += pos.x
 	thing.position.y += pos.y
 	thing.anchor.setTo(0.5, 1)
