@@ -9,6 +9,7 @@ export default class Monster extends Phaser.Sprite {
 	this.position.x += pos.x
 	this.position.y += pos.y
 	this.anchor.setTo(0.5, 1)
+	this.angle += 90
 
 	this.frame = 2;
 	this.animations.add('west', [12, 13, 14, 15, 16, 17, 18, 19], 15, true);

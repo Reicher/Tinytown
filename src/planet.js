@@ -16,14 +16,15 @@ export default class Planet extends Phaser.Group {
 
 	this.create(0, 250, 'planet')
 
-	var night = -90 //270
-	var dawn = 0 //360
-	var day = 90 //270
-	var dusk = 180 //-180
+	var night = 0
+	var dawn = 90
+	var day = 180
+	var dusk = 270
 
 	this.putOnPlanet(night-20, 'tree1');
 	this.putOnPlanet(night-40, 'cross');
 	this.putOnPlanet(night+30, 'tree1');
+
 	this.monster = new Monster(this.game, night);
 	this.add(this.monster)
 
@@ -58,7 +59,7 @@ export default class Planet extends Phaser.Group {
 
     update() {
 	// 0 = night 1 = day
-	var time = Math.abs(Math.sin(this.rotation*0.5))
+	var time = Math.abs(Math.sin(this.rotation*0.5 + Math.PI))
 	this.angle %= 359// Cannot use 360 for whatever reason.
 	this.sky.angle -= 0.05
 

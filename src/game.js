@@ -12,8 +12,6 @@ export default class extends Phaser.State {
     create () {
 	this.space = new Space(this.game)
 	this.planet = new Planet(this.game)
-	this.planet.angle -= 90;
-	this.space.angle -= 90;
 
 	this.hero = this.add.sprite(225, 255, 'hero')
 	this.hero.animations.add('west', [12, 13, 14, 15, 16, 17, 18, 19], 15, true);
@@ -44,7 +42,8 @@ export default class extends Phaser.State {
 	else
 	    this.hero.frame = 2
 
-	var time = Math.abs(Math.sin(this.planet.rotation*0.5))
+	var time = Math.abs(Math.sin((this.planet.rotation) *0.5))
+	console.log(time);
 
 	var c = Phaser.Color.interpolateColor(0x003366, 0xFDB813, 100, 100 * time, 1)
 	this.tint.tint = c
