@@ -3,8 +3,10 @@ import Monster from './monster.js'
 import pointFromPolar from './util.js'
 
 export default class Planet extends Phaser.Group {
-    constructor(game) {
+    constructor(game, hero) {
 	super(game)
+
+	this.hero = hero
 
 	this.x = 250
 	this.y = 500
@@ -25,7 +27,7 @@ export default class Planet extends Phaser.Group {
 	this.putOnPlanet(night-40, 'cross');
 	this.putOnPlanet(night+30, 'tree1');
 
-	this.monster = new Monster(this.game, dawn-10);
+	this.monster = new Monster(game, dawn-10, this.hero);
 	this.add(this.monster)
 
 	this.putOnPlanet(dawn+10, 'tree1');
@@ -40,7 +42,6 @@ export default class Planet extends Phaser.Group {
 	var fire = this.putOnPlanet(dusk-15, 'campfire');
 	fire.animations.add('burn', [0, 1], 5, true);
 	fire.animations.play('burn');
-
 
 	this.putOnPlanet(dusk+20, 'tree2');
     }
@@ -67,6 +68,8 @@ export default class Planet extends Phaser.Group {
 
 	var c = Phaser.Color.interpolateColor(0x000000, 0x7ec0ee, 100, 100*time, 1)
 	this.game.stage.backgroundColor = c
+
+	this.monster.update() // apperently needed when overriding
     }
 
 

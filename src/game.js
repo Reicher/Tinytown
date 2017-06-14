@@ -10,14 +10,16 @@ export default class extends Phaser.State {
     preload () {}
 
     create () {
-	this.space = new Space(this.game)
-	this.planet = new Planet(this.game)
-
-	this.hero = this.add.sprite(225, 255, 'hero')
+	this.hero = this.add.sprite(250, 255, 'hero')
 	this.hero.animations.add('west', [12, 13, 14, 15, 16, 17, 18, 19], 15, true);
 	this.hero.animations.add('east', [28, 29, 30, 31, 32, 33, 34, 35], 15, true);
 	this.hero.anchor.setTo(0.5, 1)
 	this.hero.scale.setTo(1.5)
+
+	this.space = new Space(this.game)
+	this.planet = new Planet(this.game, this.hero)
+
+	this.world.bringToTop(this.hero)
 
 	this.tint = this.add.graphics(0, 0)
 	this.tint.beginFill(0xffffff, 0.2);
@@ -46,8 +48,5 @@ export default class extends Phaser.State {
 
 	var c = Phaser.Color.interpolateColor(0x003366, 0xFDB813, 100, 100 * time, 1)
 	this.tint.tint = c
-
-
-
     }
 }
