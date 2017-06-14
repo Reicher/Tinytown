@@ -32,6 +32,8 @@ export default class Monster extends Phaser.Sprite {
 		this.animations.play('east')
 	    }
 	}
+	else
+	    this.frame = 2;
 
     }
 }
