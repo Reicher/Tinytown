@@ -1,6 +1,11 @@
 import Phaser from 'phaser'
 import pointFromPolar from './util.js'
 
+var East = 0;
+var South = 90;
+var West = 180;
+var North = 270;
+
 export default class Level extends Phaser.Group {
     constructor(game) {
 	super(game)
@@ -19,7 +24,7 @@ export default class Level extends Phaser.Group {
     }
 
     place_sprite(angle, height, sprite){
-	sprite.anchor.setTo(0.5, 1)
+	sprite.anchor.setTo(0.5)
 	sprite.position = pointFromPolar(250+height, angle, true)
 	return sprite
     }
@@ -35,8 +40,8 @@ export default class Level extends Phaser.Group {
 	graphics.endFill();
 	this.add(graphics)
 
-	this.create_sprite(-90, 100, 'moon')
-	this.create_sprite(90, 100, 'sun')
+	this.create_sprite(North, 200, 'moon')
+	this.create_sprite(South, 200, 'sun')
     }
 
     update()

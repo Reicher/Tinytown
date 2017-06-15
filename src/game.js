@@ -24,19 +24,7 @@ export default class extends Phaser.State {
     }
 
     update () {
-	// var speed = 0.5
-	// if (this.cursors.left.isDown){
-	//     this.planet.angle += speed
-	//     this.space.angle += speed
-	//     this.hero.animations.play('west')
-	// }
-	// else if (this.cursors.right.isDown){
-	//     this.planet.angle -= speed
-	//     this.space.angle -= speed
-	//     this.hero.animations.play('east')
-	// }
-	// else
-	//     this.hero.frame = 2
+	this.level.angle += this.hero.movement
 
 	// var time = Math.abs(Math.sin((this.planet.rotation) *0.5))
 
