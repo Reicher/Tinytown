@@ -12,7 +12,7 @@ export default class Lights extends Phaser.Group {
 	this.hero_rot = 0;
     }
 
-    update() // in radians
+    update()
     {
 	var light = Math.abs(Math.sin(this.hero_rot *0.5))
 
