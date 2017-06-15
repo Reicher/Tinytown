@@ -19,6 +19,5 @@ export default class extends Phaser.State {
     update () {
 	this.level.angle += this.hero.movement
 	this.lights.hero_rot = this.level.rotation;
-	this.lights.update(this.level.rotation);
     }
 }

@@ -21,5 +21,7 @@ export default class Lights extends Phaser.Group {
 					      100 * light,
 					      1)
 	this.tint.tint = c
+
+
     }
 }
