@@ -15,13 +15,20 @@ export default class Lights extends Phaser.Group {
     update() // in radians
     {
 	var light = Math.abs(Math.sin(this.hero_rot *0.5))
-	var c = Phaser.Color.interpolateColor(0x003366,
-					      0xFDB813,
-					      100,
-					      100 * light,
-					      1)
-	this.tint.tint = c
 
+	var ambient = Phaser.Color.interpolateColor(0x003366,
+						    0xFDB813,
+						    100,
+						    100 * light,
+						    1)
+	this.tint.tint = ambient
+
+	var sky = Phaser.Color.interpolateColor(0x000000,
+						0x7ec0ee,
+						100,
+						100 * light,
+						1)
+	this.game.stage.backgroundColor = sky
 
     }
 }
