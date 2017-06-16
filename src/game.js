@@ -10,10 +10,11 @@ export default class extends Phaser.State {
     preload () {}
 
     create () {
-
-	this.level = new Level(game)
 	this.hero = new Hero(game, 250, 255)
+	this.level = new Level(game, this.hero)
+	this.world.bringToTop(this.hero)
 	this.lights = new Lights(game);
+
     }
 
     update () {

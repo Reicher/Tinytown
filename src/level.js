@@ -9,10 +9,11 @@ var West = 180;
 var North = 270;
 
 export default class Level extends Phaser.Group {
-    constructor(game) {
+    constructor(game, hero) {
 	super(game)
 	this.x = 250
 	this.y = 500
+	this.hero = hero
 
 	this.create_heavens()
 	this.create_earth()
@@ -88,7 +89,7 @@ export default class Level extends Phaser.Group {
 	this.create_sprite(East+28, 'tree3');
 	this.create_sprite(East+10, 'tree3');
 
-	this.monster = new Monster(this.game);
+	this.monster = new Monster(this.game, this.hero);
 	this.add(this.monster);
 	this.place_sprite(East, this.monster);
 
