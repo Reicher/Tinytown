@@ -1,4 +1,6 @@
 import Phaser from 'phaser'
+
+import Monster from './monster.js'
 import pointFromPolar from './util.js'
 
 var East = 0;
@@ -16,13 +18,13 @@ export default class Level extends Phaser.Group {
 	this.create_earth()
     }
 
-    create_sprite(angle, height, key){
+    create_sprite(angle, key, height = 0){
 	return this.place_sprite(angle,
-				 height,
-				 this.create(0, 0, key))
+				 this.create(0, 0, key),
+				 height)
     }
 
-    place_sprite(angle, height, sprite){
+    place_sprite(angle, sprite, height = 0){
 	sprite.anchor.setTo(0.5)
 	var true_height =
 	    250
@@ -49,8 +51,8 @@ export default class Level extends Phaser.Group {
 	graphics.endFill();
 	this.add(graphics)
 
-	this.create_sprite(North, 200, 'moon')
-	this.create_sprite(South, 200, 'sun')
+	this.create_sprite(North, 'moon', 200)
+	this.create_sprite(South, 'sun', 200)
     }
 
     create_earth(){
@@ -58,44 +60,48 @@ export default class Level extends Phaser.Group {
 	planet.anchor.setTo(0.5);
 
 	// From Top, counter-clock
-	this.create_sprite(North+30, 0, 'tree2');
-	this.create_sprite(North+15, 0, 'tree1');
-	this.create_sprite(North-10, 0, 'tree2');
-	this.create_sprite(North-10, 0, 'tree2');
-	this.create_sprite(North-20, 0, 'tree2');
-	this.create_sprite(North-30, 0, 'cross');
-	this.create_sprite(North-40, 0, 'tree1');
+	this.create_sprite(North+30, 'tree2');
+	this.create_sprite(North+15, 'tree1');
+	this.create_sprite(North-10, 'tree2');
+	this.create_sprite(North-10, 'tree2');
+	this.create_sprite(North-20, 'tree2');
+	this.create_sprite(North-30, 'cross');
+	this.create_sprite(North-40, 'tree1');
 
-	this.create_sprite(West+30, 0, 'tree2');
-	var fire = this.create_sprite(West, 0, 'campfire');
+	this.create_sprite(West+30, 'tree2');
+	var fire = this.create_sprite(West, 'campfire');
 	fire.animations.add('burn', [0, 1], 5, true);
 	fire.animations.play('burn');
 
-	this.create_sprite(West-10, 0, 'tree2');
-	this.create_sprite(West-15, 0, 'tree2');
-	this.create_sprite(West-25, 0, 'tree1');
-	this.create_sprite(West-45, 0, 'tree2');
+	this.create_sprite(West-10, 'tree2');
+	this.create_sprite(West-15, 'tree2');
+	this.create_sprite(West-25, 'tree1');
+	this.create_sprite(West-45, 'tree2');
 
-	this.create_sprite(South, 0, 'stuga');
+	this.create_sprite(South, 'stuga');
 
-	this.create_sprite(South-25, 0, 'tree3');
-	this.create_sprite(South-40, 0, 'tree2');
-	this.create_sprite(South-45, 0, 'tree3');
+	this.create_sprite(South-25, 'tree3');
+	this.create_sprite(South-40, 'tree2');
+	this.create_sprite(South-45, 'tree3');
 
-	this.create_sprite(East+35, 0, 'tree3');
-	this.create_sprite(East+28, 0, 'tree3');
-	this.create_sprite(East+10, 0, 'tree3');
-	this.create_sprite(East-15, 0, 'tree1');
-	this.create_sprite(East-27, 0, 'tree3');
-	this.create_sprite(East-34, 0, 'tree3');
-	this.create_sprite(East-45, 0, 'tree2');
+	this.create_sprite(East+35, 'tree3');
+	this.create_sprite(East+28, 'tree3');
+	this.create_sprite(East+10, 'tree3');
 
-	// this.monster = new Monster(game, dawn-10, this.hero);
-	// this.add(this.monster)
+	this.monster = new Monster(this.game);
+	this.add(this.monster);
+	this.place_sprite(East, this.monster);
+
+	this.create_sprite(East-15, 'tree1');
+	this.create_sprite(East-27, 'tree3');
+	this.create_sprite(East-34, 'tree3');
+	this.create_sprite(East-45, 'tree2');
+
     }
 
     update()
     {
+	this.monster.update();
     }
 
 
