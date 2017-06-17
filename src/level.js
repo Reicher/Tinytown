@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 
 import Monster from './monster.js'
+import Clouds from './clouds.js'
 import pointFromPolar from './util.js'
 
 var East = 0;
@@ -54,6 +55,9 @@ export default class Level extends Phaser.Group {
 
 	this.create_sprite(North, 'moon', 200)
 	this.create_sprite(South, 'sun', 200)
+
+	this.clouds = new Clouds(game)
+	this.add(this.clouds)
     }
 
     create_earth(){
@@ -85,7 +89,7 @@ export default class Level extends Phaser.Group {
 	this.create_sprite(South-40, 'tree2');
 	this.create_sprite(South-45, 'tree3');
 
-	this.create_sprite(East+35, 'tree3');
+	this.create_sprite(East+35, 'tree2');
 	this.create_sprite(East+28, 'tree3');
 	this.create_sprite(East+10, 'tree3');
 
@@ -93,7 +97,7 @@ export default class Level extends Phaser.Group {
 	this.add(this.monster);
 	this.place_sprite(East, this.monster);
 
-	this.create_sprite(East-15, 'tree1');
+	this.create_sprite(East-15, 'tree3');
 	this.create_sprite(East-27, 'tree3');
 	this.create_sprite(East-34, 'tree3');
 	this.create_sprite(East-45, 'tree2');
@@ -103,6 +107,7 @@ export default class Level extends Phaser.Group {
     update()
     {
 	this.monster.update();
+	this.clouds.update();
     }
 
 
