@@ -65,14 +65,15 @@ export default class Level extends Phaser.Group {
 	planet.anchor.setTo(0.5);
 
 	// From Top, counter-clock
+
+	// fairy forest
 	this.create_sprite(North+30, 'tree2');
 	this.create_sprite(North+15, 'tree1');
 	this.create_sprite(North-10, 'tree2');
 	this.create_sprite(North-10, 'tree2');
-	this.create_sprite(North-20, 'tree2');
 	this.create_sprite(North-30, 'cross');
-	this.create_sprite(North-40, 'tree1');
 
+	// Campfire place
 	this.create_sprite(West+30, 'tree2');
 	var fire = this.create_sprite(West, 'campfire');
 	fire.animations.add('burn', [0, 1], 5, true);
@@ -83,12 +84,14 @@ export default class Level extends Phaser.Group {
 	this.create_sprite(West-25, 'tree1');
 	this.create_sprite(West-45, 'tree2');
 
+	// cabin
 	this.create_sprite(South, 'stuga');
 
 	this.create_sprite(South-25, 'tree3');
 	this.create_sprite(South-40, 'tree2');
 	this.create_sprite(South-45, 'tree3');
 
+	// monster
 	this.create_sprite(East+35, 'tree2');
 	this.create_sprite(East+28, 'tree3');
 	this.create_sprite(East+10, 'tree3');
@@ -98,7 +101,6 @@ export default class Level extends Phaser.Group {
 	this.place_sprite(East, this.monster);
 
 	this.create_sprite(East-15, 'tree3');
-	this.create_sprite(East-27, 'tree3');
 	this.create_sprite(East-34, 'tree3');
 	this.create_sprite(East-45, 'tree2');
 

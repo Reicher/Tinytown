@@ -24,6 +24,8 @@ export default class extends Phaser.State {
 	this.load.image('cloud1', './assets/images/cloud1.png')
 	this.load.image('cloud2', './assets/images/cloud2.png')
 
+	this.load.image('bush', './assets/images/bush.png')
+
 	this.load.image('cross', './assets/images/cross.png')
 	this.load.image('stuga', './assets/images/stuga.png')
 

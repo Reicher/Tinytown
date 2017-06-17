@@ -7,16 +7,20 @@ var South = 90;
 var West = 180;
 var North = 270;
 
-export default class Clouds extends Phaser.Group {
+export default class Foreground extends Phaser.Group {
     constructor(game) {
 	super(game)
-	var cloud = ['cloud1', 'cloud2']
-	for(var i = 0; i < 6; i++){
-	    this.create_sprite( game.rnd.angle(),
-				game.rnd.pick(cloud),
-				game.rnd.between(100, 200))
+	this.x = 250
+	this.y = 500
+	this.create_sprite( North + 40, 'tree2')
+	this.create_sprite( North + 35, 'bush')
 
-	}
+	this.create_sprite( West + 40, 'tree2')
+	this.create_sprite( West + 25, 'bush')
+	this.create_sprite( West  -14, 'tree1')
+
+	this.create_sprite( East + 35, 'tree2')
+	this.create_sprite( East  - 15, 'tree3')
     }
 
     create_sprite(angle, key, height = 0){
@@ -29,7 +33,7 @@ export default class Clouds extends Phaser.Group {
 	sprite.anchor.setTo(0.5)
 	var true_height =
 	    250
-	    + height
+	    + height - this.game.rnd.between(5, 30)
 	    + sprite.height/2
 	    - sprite.width/16
 
@@ -37,12 +41,10 @@ export default class Clouds extends Phaser.Group {
 					 angle,
 					 true)
 	sprite.angle = angle+90
-	sprite.alpha = 0.5
 	return sprite
     }
 
     update()
     {
-	this.angle -= 0.1
     }
 }
