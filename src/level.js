@@ -15,9 +15,15 @@ export default class Level extends Phaser.Group {
 	this.x = 250
 	this.y = 500
 	this.hero = hero
+	this.hero.using.add(this.interaction, this)
 
 	this.create_heavens()
 	this.create_earth()
+    }
+
+    interaction(){
+	console.log("interact!");
+	// check if we are close to anything you can interact with.
     }
 
     create_sprite(angle, key, height = 0){
