@@ -14,6 +14,7 @@ export default class Level extends Phaser.Group {
 	super(game)
 	this.x = 250
 	this.y = 500
+
 	this.hero = hero
 	this.hero.using.add(this.interaction, this)
 
@@ -22,8 +23,10 @@ export default class Level extends Phaser.Group {
     }
 
     interaction(){
-	console.log("interact!");
-	// check if we are close to anything you can interact with.
+	if (Phaser.Rectangle.intersects(this.hero.getBounds(),
+					this.fire.getBounds())){
+	    this.hero.sleeping.dispatch()
+	}
     }
 
     create_sprite(angle, key, height = 0){
@@ -59,9 +62,6 @@ export default class Level extends Phaser.Group {
 	graphics.endFill();
 	this.add(graphics)
 
-	this.create_sprite(North, 'moon', 200)
-	this.create_sprite(South, 'sun', 200)
-
 	this.clouds = new Clouds(game)
 	this.add(this.clouds)
     }
@@ -81,9 +81,9 @@ export default class Level extends Phaser.Group {
 
 	// Campfire place
 	this.create_sprite(West+30, 'tree2');
-	var fire = this.create_sprite(West, 'campfire');
-	fire.animations.add('burn', [0, 1], 5, true);
-	fire.animations.play('burn');
+	this.fire = this.create_sprite(West, 'campfire');
+	this.fire.animations.add('burn', [0, 1], 5, true);
+	this.fire.animations.play('burn');
 
 	this.create_sprite(West-10, 'tree2');
 	this.create_sprite(West-15, 'tree2');

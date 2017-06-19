@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 
 import Hero from './hero.js'
 import Level from './level.js'
+import Celestials from './celestials.js'
 import Lights from './lights'
 import Foreground from './foreground.js'
 
@@ -13,8 +14,11 @@ export default class extends Phaser.State {
     create () {
 	this.hero = new Hero(game, 250, 255)
 	this.level = new Level(game, this.hero)
+
 	this.world.bringToTop(this.hero)
+
 	this.foreground = new Foreground(game)
+	this.celestials = new Celestials(game, this.hero.sleeping);
 	this.lights = new Lights(game);
 
     }
