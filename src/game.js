@@ -3,7 +3,6 @@ import Phaser from 'phaser'
 import Hero from './hero.js'
 import Level from './level.js'
 import Celestials from './celestials.js'
-import Lights from './lights'
 import Foreground from './foreground.js'
 
 export default class extends Phaser.State {
@@ -18,14 +17,17 @@ export default class extends Phaser.State {
 	this.world.bringToTop(this.hero)
 
 	this.foreground = new Foreground(game)
-	this.celestials = new Celestials(game, this.hero.sleeping);
-	this.lights = new Lights(game);
+	this.celestials = new Celestials(game,
+					 this.hero.sleeping);
 
     }
 
     update () {
-	this.level.angle += this.hero.movement
-	this.foreground.angle += this.hero.movement
-	this.lights.hero_rot = this.level.rotation;
+	var rot = this.hero.movement
+	this.level.angle += rot
+	this.foreground.angle += rot
+	this.celestials.angle += rot
+
+	this.celestials.lights.hero_rot = this.level.rotation;
     }
 }

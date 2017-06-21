@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 
+import Lights from './lights'
 import pointFromPolar from './util.js'
 
 var East = 0;
@@ -20,6 +21,9 @@ export default class Celestials extends Phaser.Group {
 	this.place_sprite(South, sun, 200)
 
 	sleep_event.add(this.pass_time, this);
+
+	// not in the main group
+	this.lights = new Lights(game);
     }
 
     create_sprite(angle, key, height = 0){
@@ -45,7 +49,9 @@ export default class Celestials extends Phaser.Group {
     }
 
     pass_time(){
-	this.game.add.tween(this).to( { angle: '-90' }, 3000, Phaser.Easing.Bounce.Out, true);
+	this.game.add.tween(this).to( { angle: '-90' },
+				      3000,
+				      Phaser.Easing.Circular.InOut, true);
     }
 
     update()

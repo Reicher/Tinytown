@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 export default class Lights extends Phaser.Group {
-    constructor(game) {
+    constructor(game, hero) {
 	super(game)
 	this.tint = game.add.graphics(0, 0)
 	this.tint.beginFill(0xffffff, 0.15);
