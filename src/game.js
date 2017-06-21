@@ -18,7 +18,7 @@ export default class extends Phaser.State {
 
 	this.foreground = new Foreground(game)
 	this.celestials = new Celestials(game,
-					 this.hero.sleeping);
+					 this.hero);
 
     }
 

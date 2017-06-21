@@ -9,10 +9,12 @@ var West = 180;
 var North = 270;
 
 export default class Celestials extends Phaser.Group {
-    constructor(game, sleep_event) {
+    constructor(game, hero ) {
 	super(game)
 	this.x = 250
 	this.y = 500
+
+	this.hero = hero
 
 	var moon = this.create(0, 0, 'moon')
 	this.place_sprite(North, moon, 200)
@@ -20,10 +22,10 @@ export default class Celestials extends Phaser.Group {
 	var sun = this.create(0, 0, 'sun')
 	this.place_sprite(South, sun, 200)
 
-	sleep_event.add(this.pass_time, this);
+	hero.sleeping.add(this.pass_time, this);
 
 	// not in the main group
-	this.lights = new Lights(game);
+	this.lights = new Lights(game, hero);
     }
 
     create_sprite(angle, key, height = 0){
@@ -49,12 +51,14 @@ export default class Celestials extends Phaser.Group {
     }
 
     pass_time(){
-	this.game.add.tween(this).to( { angle: '-90' },
-				      3000,
-				      Phaser.Easing.Circular.InOut, true);
+	this.tween = this.game.add.tween(this).to(
+	    { angle: '-90' },
+	    3000,
+	    Phaser.Easing.Circular.InOut, true);
     }
 
     update()
     {
+	this.lights.update(this.hero.rotation + this.rotation)
     }
 }
