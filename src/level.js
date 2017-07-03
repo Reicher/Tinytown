@@ -115,8 +115,14 @@ export default class Level extends Phaser.Group {
     update()
     {
 	this.monster.update();
+	var dist = Phaser.Math.distance(this.hero.worldPosition.x,
+					this.hero.worldPosition.y,
+					this.monster.worldPosition.x,
+					this.monster.worldPosition.y)
+
+	if (dist != 0 && dist < 60) // for some reason dist is 0 at start
+	    this.over = true
+
 	this.clouds.update();
     }
-
-
 }

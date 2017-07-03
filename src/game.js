@@ -29,5 +29,8 @@ export default class extends Phaser.State {
 	this.celestials.angle += rot
 
 	this.celestials.lights.hero_rot = this.level.rotation;
+
+	if (this.level.over)
+	    this.state.start('GameOver')
     }
 }
