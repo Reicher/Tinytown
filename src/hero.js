@@ -14,6 +14,7 @@ export default class Hero extends Phaser.Sprite {
 	this.cursors = game.input.keyboard.createCursorKeys();
 
 	this.using = new Phaser.Signal();
+	this.sleeping = new Phaser.Signal();
 	var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	spaceKey.onDown.add(this.interact, this);
 

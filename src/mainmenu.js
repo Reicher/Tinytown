@@ -9,6 +9,9 @@ export default class extends Phaser.State {
 	this.add.sprite(0, 0, 'menu')
 	this.game.camera.flash('#000000')
 	this.game.input.onDown.add(this.playPressed, this)
+
+	this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(
+	    function () { this.state.start('Game')}, this);
     }
 
     playPressed () {

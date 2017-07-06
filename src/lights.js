@@ -1,20 +1,18 @@
 import Phaser from 'phaser'
 
 export default class Lights extends Phaser.Group {
-    constructor(game) {
+    constructor(game, hero) {
 	super(game)
 	this.tint = game.add.graphics(0, 0)
 	this.tint.beginFill(0xffffff, 0.15);
 	this.tint.drawRect(0, 0, 500, 500);
 	this.tint.endFill();
 	this.add(this.tint)
-
-	this.hero_rot = 0;
     }
 
-    update()
+    update(rot)
     {
-	var light = Math.abs(Math.sin(this.hero_rot *0.5))
+	var light = Math.abs(Math.sin(rot *0.5))
 
 	var ambient = Phaser.Color.interpolateColor(0x003366,
 						    0xFDB813,
