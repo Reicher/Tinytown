@@ -25,7 +25,7 @@ export default class Level extends Phaser.Group {
     interaction(){
 	if (Phaser.Rectangle.intersects(this.hero.getBounds(),
 					this.fire.getBounds())){
-	    this.hero.sleeping.dispatch()
+	    this.hero.sleep();
 	}
     }
 

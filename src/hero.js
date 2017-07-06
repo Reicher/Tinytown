@@ -25,18 +25,32 @@ export default class Hero extends Phaser.Sprite {
 	this.using.dispatch()
     }
 
+    sleep(){
+	this.sleeping.dispatch()
+	this.cursors = game.input.keyboard.disable
+	game.time.events.add(Phaser.Timer.SECOND * 4, this.wake_up, this);
+	this.frame = 0;
+
+    }
+
+    wake_up(){
+	this.cursors = game.input.keyboard.createCursorKeys();
+	this.frame = 2
+    }
+
     update(){
 	var speed = 0.5;
 
-	if (this.cursors.left.isDown){
+	if (this.cursors && this.cursors.left.isDown){
 	    this.animations.play('west')
 	    this.movement = speed
 	}
-	else if (this.cursors.right.isDown){
+	else if (this.cursors && this.cursors.right.isDown){
 	    this.animations.play('east')
 	    this.movement = -speed
 	}
-	else{
+	else if(this.cursors){
+	    this.animations.stop()
 	    this.frame = 2
 	    this.movement = 0
 	}
