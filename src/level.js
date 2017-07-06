@@ -51,17 +51,6 @@ export default class Level extends Phaser.Group {
     }
 
     create_heavens(){
-	// Stars
-	var graphics = game.add.graphics(-500, -500)
-	graphics.beginFill(0xFFFFFF, 0.4)
-	for( var i = 0; i < 300; i++)
-	    graphics.drawCircle(game.rnd.integerInRange(0, 1000),
-				game.rnd.integerInRange(0, 1000),
-				2);
-
-	graphics.endFill();
-	this.add(graphics)
-
 	this.clouds = new Clouds(game)
 	this.add(this.clouds)
     }

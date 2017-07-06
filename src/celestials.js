@@ -24,8 +24,26 @@ export default class Celestials extends Phaser.Group {
 
 	hero.sleeping.add(this.pass_time, this);
 
+	this.create_stars();
+
 	// not in the main group
 	this.lights = new Lights(game, hero);
+
+
+    }
+
+
+    create_stars(){
+	// Stars
+	this.stars = game.add.graphics(-500, -500)
+	this.stars.beginFill(0xFFFFFF, 0.4)
+	for( var i = 0; i < 300; i++)
+	    this.stars.drawCircle(game.rnd.integerInRange(0, 1000),
+				game.rnd.integerInRange(0, 1000),
+				2);
+
+	this.stars.endFill();
+	this.add(this.stars)
     }
 
     create_sprite(angle, key, height = 0){
