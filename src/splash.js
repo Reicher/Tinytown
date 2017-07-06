@@ -26,5 +26,8 @@ export default class extends Phaser.State {
 	this.game.input.onDown.add(()=>{
             this.state.start('MainMenu')
 	}, this)
+
+	this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(
+	    function () { this.state.start('MainMenu')}, this);
     }
 }

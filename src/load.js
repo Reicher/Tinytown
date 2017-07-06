@@ -11,6 +11,8 @@ export default class extends Phaser.State {
 
 	this.load.image('tnsLogo', './assets/images/tns-logo.png')
 	this.load.image('menu', './assets/images/menu.png')
+	this.load.image('end', './assets/images/end.png')
+
 	this.load.image('planet', './assets/images/planet.png')
 	this.load.image('sky', './assets/images/sky.png')
 
