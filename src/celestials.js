@@ -22,14 +22,12 @@ export default class Celestials extends Phaser.Group {
 	var sun = this.create(0, 0, 'sun')
 	this.place_sprite(South, sun, 200)
 
-	hero.sleeping.add(this.pass_time, this);
+	hero.sleep.add(this.pass_time, this);
 
 	this.create_stars();
 
 	// not in the main group
 	this.lights = new Lights(game, hero);
-
-
     }
 
 

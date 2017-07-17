@@ -13,8 +13,11 @@ export default class Hero extends Phaser.Sprite {
 	this.movement = 0;
 	this.cursors = game.input.keyboard.createCursorKeys();
 
-	this.using = new Phaser.Signal();
-	this.sleeping = new Phaser.Signal();
+	this.use = new Phaser.Signal();
+	this.sleep = new Phaser.Signal();
+
+	this.sleeping = false
+
 	var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	spaceKey.onDown.add(this.interact, this);
 
@@ -22,20 +25,25 @@ export default class Hero extends Phaser.Sprite {
     }
 
     interact(){
-	this.using.dispatch()
+	this.use.dispatch()
     }
 
-    sleep(){
-	this.sleeping.dispatch()
+    goto_sleep(){
+	if( this.sleeping )
+	    return
+
+	this.sleep.dispatch()
 	this.cursors = game.input.keyboard.disable
 	game.time.events.add(Phaser.Timer.SECOND * 4, this.wake_up, this);
 	this.frame = 0;
+	this.sleeping = true
 
     }
 
     wake_up(){
 	this.cursors = game.input.keyboard.createCursorKeys();
 	this.frame = 2
+	this.sleeping = false
     }
 
     update(){

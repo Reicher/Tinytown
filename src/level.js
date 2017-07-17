@@ -16,7 +16,7 @@ export default class Level extends Phaser.Group {
 	this.y = 500
 
 	this.hero = hero
-	this.hero.using.add(this.interaction, this)
+	this.hero.use.add(this.interaction, this)
 
 	this.create_heavens()
 	this.create_earth()
@@ -25,7 +25,7 @@ export default class Level extends Phaser.Group {
     interaction(){
 	if (Phaser.Rectangle.intersects(this.hero.getBounds(),
 					this.fire.getBounds())){
-	    this.hero.sleep();
+	    this.hero.goto_sleep();
 	}
     }
 
