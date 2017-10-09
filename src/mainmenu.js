@@ -6,7 +6,7 @@ export default class extends Phaser.State {
     }
 
     create () {
-	this.add.sprite(0, 0, 'menu')
+	this.add.sprite(0, 0, 'sprites', 'menu')
 	this.game.camera.flash('#000000')
 	this.game.input.onDown.add(this.playPressed, this)
 

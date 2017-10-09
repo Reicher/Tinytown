@@ -6,7 +6,7 @@ export default class extends Phaser.State {
     }
 
     create () {
-	this.logo = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'tnsLogo')
+	this.logo = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'sprites', 'tns-logo')
 	this.logo.anchor.setTo(0.5)
 	this.logo.alpha = 0
 

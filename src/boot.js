@@ -3,7 +3,7 @@ import Phaser from 'phaser'
 export default class extends Phaser.State {
     preload() {
 	// preload the loading indicator first before anything else
-	this.load.image('preloaderBar', 'assets/images/Loading_bar.png')
+	this.load.image('preloaderBar', 'assets/Loading_bar.png')
     }
     create() {
 	// set scale options
