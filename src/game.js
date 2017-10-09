@@ -1,4 +1,6 @@
 import Phaser from 'phaser'
+import Space from './space.js'
+import Hero from './hero.js'
 
 export default class extends Phaser.State {
     init () {}
@@ -6,7 +8,9 @@ export default class extends Phaser.State {
     preload () {}
 
     create () {
-	this.logo = this.add.sprite(0, 0, 'sprites', 'space')
+	var hero = new Hero(game)
+	var space = new Space(game)
+	//space.addHero(hero)
     }
 
     update () {
