@@ -1,6 +1,5 @@
 import Phaser from 'phaser'
 import Space from './space.js'
-import Hero from './hero.js'
 
 export default class extends Phaser.State {
     init () {}
@@ -9,7 +8,7 @@ export default class extends Phaser.State {
 
     create () {
 	this.space = new Space(game)
-	this.hero = new Hero(game)
+	this.hero = this.space.getHero();
     }
 
     update () {
