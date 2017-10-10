@@ -8,11 +8,14 @@ export default class extends Phaser.State {
     preload () {}
 
     create () {
-	var hero = new Hero(game)
-	var space = new Space(game)
-	//space.addHero(hero)
+	this.space = new Space(game)
+	this.hero = new Hero(game)
     }
 
     update () {
+	if(this.hero.movement > 0)
+	    this.space.rotation += 0.01;
+	else if(this.hero.movement < 0)
+	    this.space.rotation -= 0.01;
     }
 }
