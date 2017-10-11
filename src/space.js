@@ -46,8 +46,7 @@ export default class Space extends Phaser.Group {
 	this.add(stars)
     }
 
-    getHero(){
-	this.passTime();
-	return this.hero
+    update(){
+	this.rotation += this.hero.movement * 0.01
     }
 }

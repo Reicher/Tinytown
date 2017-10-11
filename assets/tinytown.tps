@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.5.0</string>
         <key>fileName</key>
-        <string>/home/rrr/Documents/private/Tinytown/assets/tinytown.tps</string>
+        <string>/home/regen/Documents/Tinytown/assets/tinytown.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -199,110 +199,48 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">sprites/bush.png</key>
+            <key type="filename">sprites/fire1.png</key>
+            <key type="filename">sprites/fire2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>11,8,23,15</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9Paddings</key>
-                <rect>11,8,23,15</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/campfire.png</key>
+            <key type="filename">sprites/hero_center.png</key>
+            <key type="filename">sprites/hero_left.png</key>
+            <key type="filename">sprites/hero_right.png</key>
+            <key type="filename">sprites/hero_walk_left1.png</key>
+            <key type="filename">sprites/hero_walk_left2.png</key>
+            <key type="filename">sprites/hero_walk_left3.png</key>
+            <key type="filename">sprites/hero_walk_left4.png</key>
+            <key type="filename">sprites/hero_walk_left5.png</key>
+            <key type="filename">sprites/hero_walk_left6.png</key>
+            <key type="filename">sprites/hero_walk_left7.png</key>
+            <key type="filename">sprites/hero_walk_left8.png</key>
+            <key type="filename">sprites/hero_walk_right1.png</key>
+            <key type="filename">sprites/hero_walk_right2.png</key>
+            <key type="filename">sprites/hero_walk_right3.png</key>
+            <key type="filename">sprites/hero_walk_right4.png</key>
+            <key type="filename">sprites/hero_walk_right5.png</key>
+            <key type="filename">sprites/hero_walk_right6.png</key>
+            <key type="filename">sprites/hero_walk_right7.png</key>
+            <key type="filename">sprites/hero_walk_right8.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>20,10,40,20</rect>
+                <rect>4,8,9,16</rect>
                 <key>scale9Paddings</key>
-                <rect>20,10,40,20</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/cloud1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>23,8,45,15</rect>
-                <key>scale9Paddings</key>
-                <rect>23,8,45,15</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/cloud2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>33,10,65,20</rect>
-                <key>scale9Paddings</key>
-                <rect>33,10,65,20</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/cross.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/end.png</key>
-            <key type="filename">sprites/menu.png</key>
-            <key type="filename">sprites/planet.png</key>
-            <key type="filename">sprites/space.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>125,125,250,250</rect>
-                <key>scale9Paddings</key>
-                <rect>125,125,250,250</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/hero.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>153,8,306,16</rect>
-                <key>scale9Paddings</key>
-                <rect>153,8,306,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/monster.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>501,25,1001,50</rect>
-                <key>scale9Paddings</key>
-                <rect>501,25,1001,50</rect>
+                <rect>4,8,9,16</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -320,29 +258,16 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/sky.png</key>
+            <key type="filename">sprites/planet.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>175,175,350,350</rect>
+                <rect>125,125,250,250</rect>
                 <key>scale9Paddings</key>
-                <rect>175,175,350,350</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/stuga.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>49,38,98,75</rect>
-                <key>scale9Paddings</key>
-                <rect>49,38,98,75</rect>
+                <rect>125,125,250,250</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -359,67 +284,34 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/tree1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>13,24,25,48</rect>
-                <key>scale9Paddings</key>
-                <rect>13,24,25,48</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/tree2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,24,33,48</rect>
-                <key>scale9Paddings</key>
-                <rect>16,24,33,48</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/tree3.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,23,33,46</rect>
-                <key>scale9Paddings</key>
-                <rect>16,23,33,46</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>sprites/bush.png</filename>
-            <filename>sprites/campfire.png</filename>
-            <filename>sprites/cloud1.png</filename>
-            <filename>sprites/cloud2.png</filename>
-            <filename>sprites/cross.png</filename>
-            <filename>sprites/end.png</filename>
-            <filename>sprites/hero.png</filename>
-            <filename>sprites/menu.png</filename>
-            <filename>sprites/monster.png</filename>
             <filename>sprites/moon.png</filename>
             <filename>sprites/planet.png</filename>
-            <filename>sprites/sky.png</filename>
-            <filename>sprites/space.png</filename>
-            <filename>sprites/stuga.png</filename>
             <filename>sprites/sun.png</filename>
             <filename>sprites/tns-logo.png</filename>
-            <filename>sprites/tree1.png</filename>
-            <filename>sprites/tree2.png</filename>
-            <filename>sprites/tree3.png</filename>
+            <filename>sprites/hero_center.png</filename>
+            <filename>sprites/hero_left.png</filename>
+            <filename>sprites/hero_right.png</filename>
+            <filename>sprites/hero_walk_left1.png</filename>
+            <filename>sprites/hero_walk_left2.png</filename>
+            <filename>sprites/hero_walk_left3.png</filename>
+            <filename>sprites/hero_walk_left4.png</filename>
+            <filename>sprites/hero_walk_left5.png</filename>
+            <filename>sprites/hero_walk_left6.png</filename>
+            <filename>sprites/hero_walk_left7.png</filename>
+            <filename>sprites/hero_walk_left8.png</filename>
+            <filename>sprites/hero_walk_right1.png</filename>
+            <filename>sprites/hero_walk_right2.png</filename>
+            <filename>sprites/hero_walk_right3.png</filename>
+            <filename>sprites/hero_walk_right4.png</filename>
+            <filename>sprites/hero_walk_right5.png</filename>
+            <filename>sprites/hero_walk_right6.png</filename>
+            <filename>sprites/hero_walk_right7.png</filename>
+            <filename>sprites/hero_walk_right8.png</filename>
+            <filename>sprites/fire1.png</filename>
+            <filename>sprites/fire2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
